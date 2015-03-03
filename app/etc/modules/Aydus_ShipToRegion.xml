@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!-- 
+/**
+ * ShipToRegion module config
+ *
+ * @category   Aydus
+ * @package    Aydus_ShipToRegion
+ * @author     Aydus Consulting <davidt@aydus.com>
+ */
+-->
+<config>
+    <modules>
+        <Aydus_ShipToRegion>
+            <active>true</active>
+            <codePool>community</codePool>
+        </Aydus_ShipToRegion>
+    </modules>
+</config>

@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * ShipToRegion module config
+ *
+ * @category   Aydus
+ * @package    Aydus_ShipToRegion
+ * @author     Aydus Consulting <davidt@aydus.com>
+ */
+-->
+<config>
+    <modules>
+        <Aydus_ShipToRegion>
+            <version>1.0.0</version>
+        </Aydus_ShipToRegion>
+    </modules>
+    <frontend>
+	    <events>
+	        <sales_quote_address_collect_totals_before>
+	            <observers>
+	                <disable_checkout>
+	                    <type>singleton</type>
+	                    <class>aydus_shiptoregion/observer</class>
+	                    <method>checkShipToRegion</method>
+	                </disable_checkout>
+	            </observers>
+	        </sales_quote_address_collect_totals_before>
+	    </events>    
+    </frontend>
+    <global>
+        <events>
+            <adminhtml_init_system_config>
+                <observers>
+                    <aydus_shiptoregion_system_config>
+                        <class>aydus_shiptoregion/observer</class>
+                        <method>addShipToRegionFields</method>
+                    </aydus_shiptoregion_system_config>
+                </observers>
+            </adminhtml_init_system_config>
+        </events>      
+        <helpers>
+            <aydus_shiptoregion>
+                <class>Aydus_ShipToRegion_Helper</class>
+            </aydus_shiptoregion>
+			<directory>
+				<rewrite>
+					<data>Aydus_ShipToRegion_Helper_Directory_Data</data>
+				</rewrite>
+			</directory>            
+        </helpers>
+        <models>
+            <aydus_shiptoregion>
+                <class>Aydus_ShipToRegion_Model</class>
+            </aydus_shiptoregion>
+        </models>
+    </global>                       
+      
+</config>
