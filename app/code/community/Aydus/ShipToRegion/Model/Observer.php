@@ -89,6 +89,9 @@ class Aydus_ShipToRegion_Model_Observer
                 if ($configAr['active']){
                     
                     $specificRegion = $configAr['specificregion'];
+                    if (!$specificRegion){
+                        $specificRegion = $store->getConfig('general/region/allow');
+                    }
                     
                     $regionIds = explode(',',$specificRegion);
                     
